@@ -28,7 +28,7 @@ res.sendStatus(400);
 
 app.post('/destination',function(req,res){
 if( req.headers['verification-token'] === DESTINATION_VERIFICATION_TOKEN){
-console.log('verification-token matched!');
-return res.send(req.query.challange);
+console.log('verification-token matched!!!');
+return res.sendStatus(200);
 }
 });
