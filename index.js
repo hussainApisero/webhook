@@ -23,7 +23,7 @@ return res.send(req.query.challange);
 }
 
 console.log('verification-token did not match!');
-res.sendStatus(400);
+res.sendStatus(200);
 });
 
 app.post('/destination',function(req,res){
