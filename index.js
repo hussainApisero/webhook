@@ -19,7 +19,7 @@ res.send('Hello world!!!!');
 app.get('/destination' , function(req,res){
 if( req.headers['verification-token'] === DESTINATION_VERIFICATION_TOKEN){
 console.log('verification-token matched!');
-return res.sendStatus(200);
+return res.send(req.query.challenge);
 }
 
 console.log('verification-token did not match!');
@@ -27,8 +27,6 @@ res.sendStatus(400);
 });
 
 app.post('/destination',function(req,res){
-if( req.headers['verification-token'] === DESTINATION_VERIFICATION_TOKEN){
-console.log('verification-token matched!!!');
-return res.sendStatus(200);
-}
+console.log(req.body);
+res.sendStatus(200);
 });
