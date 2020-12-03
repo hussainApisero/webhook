@@ -23,10 +23,11 @@ return res.send(req.query.challange);
 }
 
 console.log('verification-token did not match!');
-res.sendStatus(200);
+res.sendStatus(400);
 });
 
 app.post('/destination',function(req,res){
-console.log(req.body);
-res.sendStatus(200);
+if( req.headers['verification-token'] === DESTINATION_VERIFICATION_TOKEN){
+console.log('verification-token matched!');
+return res.send(req.query.challange);
 });
