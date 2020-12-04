@@ -28,6 +28,6 @@ res.sendStatus(400);
 
 app.post('/destination',function(req,res){
 console.log(req.body);
-res.send(req.body);
+//res.send(req.body);
 res.sendStatus(200);
 });
